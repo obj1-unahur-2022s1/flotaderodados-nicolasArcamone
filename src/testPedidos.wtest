@@ -1,0 +1,20 @@
+import rodados.*
+import pedidos.*
+
+describe "Pedidos" {
+	var p1 = new Pedidos(distancia= 960,tiempoMaximo= 8,cantPasajeros=4,coloresIncompatibles=["azul","negro"])
+	
+	test "Corsa satisface pedido"{
+	
+	assert.that(p1.puedeSatisfacer(new Corsa(color = "rojo")))	
+	}
+	
+	test "Corsa no satisface pedido por color"{
+	
+	assert.that(p1.puedeSatisfacer(new Corsa(color = "negro")))	
+	}
+	
+	
+		
+}
+
